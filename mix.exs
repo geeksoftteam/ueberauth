@@ -28,7 +28,8 @@ defmodule Ueberauth.Mixfile do
      # dev/test dependencies
      {:credo, "~> 0.5", only: [:dev, :test]},
      {:earmark, "~> 0.2", only: :dev},
-     {:ex_doc, "~> 0.12", only: :dev}]
+     {:ex_doc, "~> 0.12", only: :dev},
+     {:mock, "~> 0.2.0", only: :test}]
   end
 
   defp docs do
