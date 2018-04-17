@@ -43,4 +43,12 @@ defmodule Ueberauth.ConfigTest do
     assert Ueberauth.Config.get(conn, :some_strategy) == []
   end
 
+  test "gets empty config instead of nil if no config specified" do
+    conn =
+      conn(:get, "/auth/simple")
+      |> put_private(:test, "app_2")
+
+    assert Ueberauth.Config.Multi.get(conn, @config) == []
+  end
+
 end

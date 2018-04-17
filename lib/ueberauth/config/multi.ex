@@ -10,7 +10,7 @@ defmodule Ueberauth.Config.Multi do
     container = Keyword.get(config, :conn_container, @default_conn_container)
     field = Keyword.get(config, :conn_field, @default_conn_field)
     app = get_app(conn, container, field)
-    config[:configs][app]
+    config[:configs][app] || []
   end
 
   def get_app(%Plug.Conn{assigns: assigns}, :assigns, field), do: assigns[field]
