@@ -6,6 +6,7 @@ defmodule Ueberauth.Mixfile do
   def project do
     [
       app: :ueberauth,
+      organization: "finotech",
       name: "Überauth",
       version: @version,
       elixir: "~> 1.4",
