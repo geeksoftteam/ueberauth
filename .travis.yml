@@ -1,20 +1,17 @@
 language: elixir
 sudo: false
-elixir:
-  - 1.5
-  - 1.4
-  - 1.3
-otp_release:
-  - 20.0
-  - 19.3
-  - 18.3
-matrix:
-  exclude:
-    - elixir: 1.3
-      otp_release: 20.0
 notifications:
   email: false
+
+elixir:
+  - 1.6
+
+otp_release:
+  - 20.2
+
 script:
-  - mix compile --warnings-as-errors
-  - mix credo
-  - mix test
+  - make testing
+after_script:
+  - make docs
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
